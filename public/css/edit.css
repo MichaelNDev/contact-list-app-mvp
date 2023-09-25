@@ -1,0 +1,192 @@
+h1 {
+    color: rgb(188, 65, 255);
+    font-family: sans-serif;
+}
+
+body {
+    background: linear-gradient(rgb(255, 249, 249) 90%, rgb(188, 65, 255));
+    height: 100vh;
+    min-height: 1050px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+label {
+    font-family: sans-serif;
+    color: rgb(188, 65, 255);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form > button {
+    color: white;
+    background-color: rgb(188, 65, 255, 50%);
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+form > button:hover {
+    background-color: rgb(188, 65, 255);
+}
+
+input {
+    margin-bottom: 10px;
+    width: 250px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: auto;
+    min-height: 600px;
+    max-height: 650px;
+    width: 400px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(188, 65, 255, 50%);
+    box-shadow: 0px 2px 20px black;
+    margin-top: 50px;
+    overflow: hidden;
+}
+
+ul {
+    height: 600px;
+    overflow-y: scroll;
+    padding: 0 40px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: red;
+}
+
+li {
+    display: flex;
+    height: 75px;
+    width: 325px;
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li:hover {
+    background-color: rgb(244, 231, 250);
+}
+
+.edit-special {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}
+
+
+ul {
+    padding: 0;
+}
+
+.li-content {
+    margin-left: 20px;
+}
+.li-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+button {
+    margin: 3px 0;
+    padding: 5px;
+}
+
+.purple {
+    background-color: rgb(188, 65, 255, 50%);
+    border: none;
+    border-radius: 10px;
+}
+
+.purple:hover {
+    background-color: rgb(188, 65, 255);
+}
+
+.red {
+    background-color: rgba(255, 0, 0, 0.651);
+    border: none;
+    border-radius: 10px;
+}
+
+.red:hover {
+    background-color: rgba(255, 0, 0);
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-family: sans-serif;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.li-content > div {
+    font-family: sans-serif;
+    margin: 2px 0;
+}
+
+.edit-special > button {
+    color: white;
+    background-color: rgb(188, 65, 255, 50%);
+    border: none;
+    border-radius: 10px;
+}
+
+.edit-special > .cancel {
+    background-color: rgba(255, 0, 0, 0.651);
+    padding: 5px 99px;
+}
+
+footer {
+    margin-top: 10%;
+    color: rgb(0, 0, 0);
+    font-family: sans-serif;
+}
+
+@media (max-width: 550px) {
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form > button {
+    /* padding-top: 10px;
+    padding-bottom: 10px; */
+    margin-right: 10px;
+}
+
+input {
+    margin-bottom: 10px;
+    width: 250px;
+}
+
+.edit-special > .cancel {
+    padding: 5px 93px;
+    margin-right: 7px;
+}
+
+
+}

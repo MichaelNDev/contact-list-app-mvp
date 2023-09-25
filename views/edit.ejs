@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Address Book</title>
+    <link rel="stylesheet" href="/css/edit.css">
+</head>
+<body>
+    <h1>Edit Pending</h1>
+        <section class="container">
+            <ul>
+                <% contactList.forEach(contact => { %>
+                <% if(contact._id == idContact) { %>
+                <li class="edit-special">
+                    <form action="/edit/update/<%= contact._id%>" method="POST">
+                        <label for="nameinput">Name</label>
+                        <input type="text" name="nameinput" value="<%= contact.nameinput %>">
+                        <label for="phoneinput">Phone</label>
+                        <input type="tel" name="phoneinput" require pattern="[0-9]{10}" value="<%= contact.phoneinput %>"></input>
+                        <label for="emailinput">Email</label>
+                        <input type="email" name="emailinput" value="<%= contact.emailinput%>"></input>
+                        <button type="submit">Save Changes</button>
+                    </form>
+                    <button class="cancel"><a href="/">Cancel</a></button>
+                </li>
+                <% } else { %>
+                    <li>
+                        <div class="li-content">
+                            <div><%= contact.nameinput %></div>
+                            <div><%= contact.phoneinput %></div>
+                            <div><%= contact.emailinput %></div>
+                        </div>
+                        <div class="li-buttons">
+                            <button class="purple"><a href="/edit/<%= contact._id%>">Edit</a></button>
+                            <button class="red"><a href="/edit/remove/<%= contact._id%>">Remove</a></button>
+                        </div>
+                    </li>
+                <% } %>
+                <% }) %>
+            </ul>
+        </section>
+
+        <footer>A web app to demonstrate CRUD usage. Created by MichaelNDev.</footer>
+</body>
+</html>

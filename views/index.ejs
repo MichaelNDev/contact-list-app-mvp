@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <h1>Carly's Contact List</h1>
+
+    <div class="form-box">
+        <form action="/newcontact" method="POST">
+            <label for="nameinput">Name</label>
+            <input type="text" name="nameinput"></input>
+            <label for="phoneinput">Phone</label>
+            <input type="tel" name="phoneinput" require pattern="[0-9]{10}"></input>
+            <label for="emailinput">Email</label>
+            <input type="email" name="emailinput"></input>
+            <button type="submit">Add Contact</button>
+        </form>
+    </div>
+
+
+    <!-- EJS RENDERS BELOW HERE -->
+    <div class="container">
+        <ul>
+            <% contactList.forEach(contact => { %>
+                <li>
+                    <div class="li-content">
+                        <div><%= contact.nameinput %></div>
+                        <div><%= `(${contact.phoneinput.slice(0, 3)})-${contact.phoneinput.slice(3, 6)}-${contact.phoneinput.slice(6, 10)}` %></div>
+                        <div><%= contact.emailinput %></div>
+                    </div>
+                    <div class="li-buttons">
+                        <button class="purple"><a href="/edit/<%=contact._id %>">Edit</a></button>
+                        <button class="red"><a href="/edit/remove/<%=contact._id %>">Remove</a></button>
+                    </div>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+
+    <footer>A web app to demonstrate CRUD usage. Created by MichaelNDev.</footer>
+</body>
+</html>
